@@ -69,6 +69,13 @@ Widget buttonSection = Row(
   ],
 );
 
+Widget imageSection = Image.asset(
+  'images/lake.jpg',
+  width: 600,
+  height: 240,
+  fit: BoxFit.cover,
+);
+
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -79,6 +86,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(title: const Text('Flutter Layout Demo')),
       body: Column(
       children: [
+        imageSection,
         titleSection,
         buttonSection,
         ],
