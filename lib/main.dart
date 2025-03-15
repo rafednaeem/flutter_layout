@@ -15,6 +15,33 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+Widget titleSection = Container(
+  padding: const EdgeInsets.all(32),
+  child: Row(
+    children: [
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: const Text(
+                'Oeschinen Lake Campground',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            const Text(
+              'Kandersteg, Switzerland',
+              style: TextStyle(color: Colors.grey),
+            ),
+          ],
+        ),
+      ),
+      Icon(Icons.star, color: Colors.red[500]),
+      const Text('41'),
+    ],
+  ),
+);
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -23,7 +50,11 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Layout Demo')),
-      body: const Center(child: Text('Hello, Flutter!')),
+      body: Column(
+      children: [
+        titleSection,
+        ],
+      ),
     );
   }
 }
