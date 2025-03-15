@@ -43,6 +43,33 @@ Widget titleSection = Container(
   ),
 );
 
+Column buildButtonColumn(Color color, IconData icon, String label) {
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Icon(icon, color: color),
+      Container(
+        margin: const EdgeInsets.only(top: 8),
+        child: Text(
+          label,
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: color),
+        ),
+      ),
+    ],
+  );
+}
+
+Widget buttonSection = Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    buildButtonColumn(Colors.blue, Icons.call, 'CALL'),
+    buildButtonColumn(Colors.blue, Icons.near_me, 'ROUTE'),
+    buildButtonColumn(Colors.blue, Icons.share, 'SHARE'),
+  ],
+);
+
+
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
@@ -53,6 +80,7 @@ class MyHomePage extends StatelessWidget {
       body: Column(
       children: [
         titleSection,
+        buttonSection,
         ],
       ),
     );
